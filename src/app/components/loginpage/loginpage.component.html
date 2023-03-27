@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="box">
+        <div class="content">
+            <h2 class="text-center mb-4">Login</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <label for="username">Email/Username:</label>
+                <input type="text" class="form-control" formControlName="email" required>
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" formControlName="password" required>
+                <button class="form-control" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

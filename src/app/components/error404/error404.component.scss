@@ -1,0 +1,12 @@
+.container-fluid{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    .error{
+        background: url("/assets/images/error404.jpg");
+        background-size: cover;
+        height: 350px;
+        width: 350px;
+        
+    }
+}

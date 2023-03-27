@@ -1,0 +1,94 @@
+.container-fluid{
+    width: calc(100% - 80px);
+    margin-left: 80px;
+    background: rgb(255, 255, 255);
+    z-index: 1;
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background: url("/assets/images/chart-bg.jpg");
+        background-size: cover;
+        color: #fff;
+        
+        .chart{
+            max-width: 450px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50px;
+            margin: 100px 0;
+            app-doughnut-chart{
+              padding: 30px;
+            }
+            h4{
+              font-weight: 500;
+              text-align: center;
+            }
+          
+           
+        }
+        
+      .employeeTable{
+        padding-top: 40px;
+        display: grid;
+        place-items: center;
+        
+        table{
+           max-width: 800px;
+           background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            td{
+              border: 0;
+            }
+            img{
+                width: 40px;
+                border-radius: 30px;
+                margin-right: 10px;
+            }
+           }
+      }
+      .addEmployee{
+        display: grid;
+        place-items: center;
+        padding: 50px 0;
+        
+        h4{
+            font-weight: 600;
+            padding-bottom: 20px;
+        }
+        .btn{
+          font-size: 18px;
+          font-weight: 600;
+          border-color: #00ff99;
+          color: #00ff99;
+        }
+      
+        .btn:hover{
+          color: #000;
+          background-color: #00ff99;
+        }
+      }
+    }
+   
+}
+
+@media (max-width:767px){
+  .container-fluid{
+      width: 100%;
+      margin-left: 0;
+  }
+  .chart{
+    margin: 0;
+  }
+  table{
+    .btn-outline-info{
+      margin-bottom: 15px;
+    }
+    
+  }
+}
+@media(max-width:500px){
+  .guage{
+    overflow: hidden;
+  }
+}

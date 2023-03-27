@@ -1,0 +1,68 @@
+.container-fluid{
+    width: calc(100% - 80px);
+    margin-left: 80px;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: url("/assets/images/emp-background.jpg");
+    background-size: cover;
+    form{
+        margin: 50px 0;
+        max-width: 850px;
+        border: 4px outset #6897c3;
+        padding: 50px;
+        border-radius: 20px;
+        background: rgba($color: #fff, $alpha: 0.1);
+        h3{
+            font-weight: 600;
+            text-decoration: underline;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        .form-control{
+            border: 0;
+            // border-bottom: 1px solid black;
+            // border-radius: 0;
+            background: rgba($color: #fff, $alpha: 0.6);
+        }
+        .form-check-input{
+            border: 2px solid;
+        }
+        label{
+            color: #fff;
+        }
+        .btn{
+            margin-top: 30px;
+            color: #fff;
+            background-color: #000;
+            transition: all 0.5s ease;
+        }
+        .btn:hover{
+            transform: translateY(-5px);
+            background-color: #68c3c3;
+            color: #000;
+        }
+        .profile-image{
+            visibility: hidden;
+        }
+    }
+    .dob{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+@media (max-width:767px){
+    .container-fluid{
+        width: 100%;
+        margin-left: 0;
+        height: 100%;
+    }
+    
+    form{
+        margin: 0;
+        width: 100%
+    }
+}
+

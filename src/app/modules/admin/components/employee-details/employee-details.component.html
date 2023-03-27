@@ -1,0 +1,166 @@
+
+<div class="container-fluid">
+    <div class="row employee-info">
+        <div class="col-lg-4 col-12 emp-info-actions">
+                   <div class="employee-card">
+                        <div class="profile-image">
+                           <img [src]="empDetails.image" alt="">
+                        </div>
+                
+                        <h3 class="text-center">{{empDetails.first_name}} {{empDetails.last_name}}</h3>
+                        <h5 class="text-center p-1"><i class="bi bi-person-workspace"></i> {{empDetails.department}}</h5>
+                        <h5 class="text-center p-1"><i class="bi bi-geo-alt"></i> {{empDetails.location}}</h5>
+                        <p>Linkedin <i class="bi bi-linkedin"></i></p>
+                        <p>Github <i class="bi bi-github"></i></p>
+                        <div class="actions">
+                        <button class="btn btn-outline-primary" (click)="editEmployee()">Edit</button>  &nbsp; &nbsp;
+                        <button class="btn btn-outline-danger" (click)="deleteEmployee(empDetails.id)">Delete</button>
+                    </div>
+                   </div>
+        </div>
+            
+        <div class="col-lg-8 col-12 personal-data">
+            <div *ngIf="show else editPart"  class="row">
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>First Name:</label>
+                    <p>{{empDetails.first_name}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Last Name:</label>
+                    <p>{{empDetails.last_name}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Slack Id:</label>
+                    <p>{{empDetails.id}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Email:</label>
+                    <p>{{empDetails.email}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Contact:</label>
+                    <p>{{empDetails.phone}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Age:</label>
+                    <p>{{empDetails.age}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Date of Birth:</label>
+                    <p>{{empDetails.DOB | date}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Blood Group:</label>
+                    <p>{{empDetails.Blood_group}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Status:</label>
+                    <p [style.color]="empDetails.status== 'active' ? 'green':'darkred' ">{{empDetails.status | titlecase}}</p>
+                </div>
+                <div class="col-md-6 col-12 empData mb-3">
+                    <label>Leaves:</label>
+                    <p>{{empDetails.leaves}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #editPart>
+        <form #employeeData="ngForm" >
+            
+                <h3 class="text-center mb-4">Edit Details</h3>
+            <div class="row g-3">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="">Employee Id:</label>
+                    <input type="text" class="form-control" name="id" placeholder="Employee Id" aria-label="Employee Id" required [(ngModel)]="this.empDetails.id">
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="">First Name:</label>
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" aria-label="First Name" required [(ngModel)]="this.empDetails.first_name">
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="">Last Name:</label>
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" aria-label="Name" required [(ngModel)]="this.empDetails.last_name">
+                </div>
+                
+                
+                <div class="col-md-6 col-12">
+                    <label for="">Blood Group:</label>
+                    <input type="text" class="form-control" name="Blood_group" placeholder="Blood Group" aria-label="Blood Group" required [(ngModel)]="this.empDetails.Blood_group">
+                </div>
+                <div class="col-md-6 col-12" style="padding-top: 25px;">
+                    <div class="form-check-inline dob">
+                        <label for="DOB" style="padding-right: 10px;">Date Of Birth:</label>
+                    <input type="date" class="form-control w-50" name="DOB" placeholder="Date of Birth" aria-label="Date of Birth" required [(ngModel)]="this.empDetails.DOB">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="">Age:</label>
+                    <input type="number" class="form-control" name="age" placeholder="Age" aria-label="Age" required [(ngModel)]="this.empDetails.age">
+                </div>
+                <div class="col-lg-4 col-md-6 col-12" style="padding-top: 20px;">
+                    <label for="gender" class="p-2">Gender:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" required [(ngModel)]="this.empDetails.gender">
+                        <label class="form-check-label" for="gender1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="gender2" value="female" required [(ngModel)]="this.empDetails.gender">
+                        <label class="form-check-label" for="gender2">Female</label>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12" style="padding-top: 20px;">
+                    <label for="status" class="p-2">Status:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="status" id="status1" value="active" required [(ngModel)]="this.empDetails.status">
+                        <label class="form-check-label" for="status1">Active</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="status" id="status2" value="inactive" required [(ngModel)]="this.empDetails.status">
+                        <label class="form-check-label" for="status2">Inactive</label>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="">Location:</label>
+                    <select #country class="form-control" name="location" (change)="changeCountry($event)" required [(ngModel)]="this.empDetails.location">
+                        <option value="" selected>Select Country</option>
+                        <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                    </select>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="">Department:</label>
+                    <input type="text" class="form-control" name="department" placeholder="Department" aria-label="Department" required [(ngModel)]="this.empDetails.department">
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="">Work hours:</label>
+                    <input type="number" class="form-control" name="productive_hours" placeholder="Work Hours" aria-label="Work Hours" required [(ngModel)]="this.empDetails.productive_hours">
+                </div>
+                <div class="col-md-6 col-12">
+                    <label for="">Leaves:</label>
+                    <input type="number" class="form-control" name="leaves" placeholder="Leaves" aria-label="Leaves" required [(ngModel)]="this.empDetails.leaves">
+                </div>
+                <div class="col-md-6 col-12">
+                    <label for="">Email:</label>
+                    <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Email" required [(ngModel)]="this.empDetails.email">
+                </div>
+                <div class="col-md-6 col-12">
+                    <label for="">Password:</label>
+                    <input type="password" class="form-control" name="password" placeholder="password" aria-label="password" required [(ngModel)]="this.empDetails.password">
+                </div>
+                <div class="col-md-6 col-12">
+                    <label for="">Phone:</label>
+                    <input type="text" class="form-control" name="phone" placeholder="Phone Number" aria-label="Phone Number" required [(ngModel)]="this.empDetails.phone">
+                </div>
+                <div class="col-4 profile-image">
+                    <input type="email" name="image" [(ngModel)]="this.empDetails.image">
+                </div>
+                <div class="col-12 submitbtn">
+                    <button class="form-control btn" (click)="updateEmployee(employeeData.value)">Submit</button>
+                </div>
+            </div>
+            
+            
+        </form>
+    </ng-template>
+      
+</div>

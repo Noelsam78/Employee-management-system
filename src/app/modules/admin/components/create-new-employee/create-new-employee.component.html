@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <form #employeeForm="ngForm">
+        <h3 class="text-center mb-4">Add New Employee</h3>
+        <div class="row g-3">
+            <div class="col-lg-4 col-md-6 col-12">
+                <input type="text" class="form-control" name="id" placeholder="Employee Id" aria-label="Employee Id" required ngModel>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <input type="text" class="form-control" name="first_name" placeholder="First Name" aria-label="First Name" required ngModel>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <input type="text" class="form-control" name="last_name" placeholder="Last Name" aria-label="Name" required ngModel>
+            </div>
+            
+            
+            <div class="col-md-6 col-12">
+                <input type="text" class="form-control" name="Blood_group" placeholder="Blood Group" aria-label="Blood Group" required ngModel>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-check-inline dob">
+                    <label for="DOB">Date Of Birth:</label>
+                <input type="date" class="form-control w-50" name="DOB" placeholder="Date of Birth" aria-label="Date of Birth" required ngModel>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <input type="number" class="form-control" name="age" placeholder="Age" aria-label="Age" required ngModel>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <label for="gender" class="p-2">Gender:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" required ngModel>
+                    <label class="form-check-label" for="gender1">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="gender2" value="female" required ngModel>
+                    <label class="form-check-label" for="gender2">Female</label>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <label for="status" class="p-2">Status:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="status" id="status1" value="active" required ngModel>
+                    <label class="form-check-label" for="status1">Active</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="status" id="status2" value="inactive" required ngModel>
+                    <label class="form-check-label" for="status2">Inactive</label>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <select #country class="form-control" name="location" (change)="changeCountry($event)" required ngModel>
+                    <option value="" selected disabled>Select Country</option>
+                    <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+                </select>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <input type="text" class="form-control" name="department" placeholder="Department" aria-label="Department" required ngModel>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <input type="number" class="form-control" name="productive_hours" placeholder="Work Hours" aria-label="Work Hours" required ngModel>
+            </div>
+            <div class="col-md-6 col-12">
+                <input type="number" class="form-control" name="leaves" placeholder="Leaves" aria-label="Leaves" required ngModel>
+            </div>
+            <div class="col-md-6 col-12">
+                <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Email" required ngModel>
+            </div>
+            <div class="col-md-6 col-12">
+                <input type="password" class="form-control" name="password" placeholder="password" aria-label="password" required ngModel>
+            </div>
+            <div class="col-md-6 col-12">
+                <input type="text" class="form-control" name="phone" placeholder="Phone Number" aria-label="Phone Number" required ngModel>
+            </div>
+            <div class="col-12 submitbtn">
+                <button class="form-control btn btn-outline-dark" (click)="addEmployee(employeeForm.value)">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

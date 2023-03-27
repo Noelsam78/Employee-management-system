@@ -1,0 +1,33 @@
+
+<nav class="navbar navbar-expand-md bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="navbar-nav ms-auto mb-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        </div>
+     
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <nav class="sidebar">
+            <ul>
+                <li><div class="logo mb-4">
+                    <img src="/assets/images/slack.svg" alt="" class="image"><span>Slack</span>
+                </div></li>
+                <li><a class="nav-link mb-3" routerLink="./profile" routerLinkActive="active">
+                    <i class="bi bi-person-circle"></i><span class="nav-item">Profile</span>
+                </a></li>
+                <li><a class="nav-link mb-3" routerLink="./leaveapply" routerLinkActive="active">
+                    <i class="bi bi-calendar-event"></i><span class="nav-item">Apply Leave</span>
+                </a></li>
+                <li><a class="logout nav-link" (click)="logout()">
+                    <i class="bi bi-box-arrow-left"></i><span class="nav-item">Log out</span>
+                </a></li>
+            </ul>
+        </nav>
+       
+      </div>
+    </div>
+  </nav>
+
+
+<router-outlet></router-outlet>

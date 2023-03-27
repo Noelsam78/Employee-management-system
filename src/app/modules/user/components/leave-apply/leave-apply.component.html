@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <form #leaveform="ngForm">
+        <h3 class="text-center">Leave Application</h3>
+        <div class="row g-3">
+            <div class="col-md-6 col-12">
+                <label for="">Employee Id:</label>
+                <input type="text" class="form-control" name="id" required ngModel>
+            </div>
+            <div class="col-md-6 col-12">
+                <label for="">Leave Type:</label>
+                <select class="form-select" aria-label="Default select example" name="leave_type" ngModel required>
+                    <option selected>Open this select menu</option>
+                    <option value="Sick leave">Sick leave</option>
+                    <option value="Personal leave">Personal leave</option>
+                    <option value="Annual leave">Annual leave</option>
+                  </select>
+            </div>
+            <div class="col-md-6 col-12">
+                <label for="">Start Date:</label>
+                <input type="date" class="form-control" name="start_date" id="" ngModel required>
+            </div>
+            <div class="col-md-6 col-12">
+                <label for="">End Date:</label>
+                <input type="date" class="form-control" name="end_date" id="" ngModel required>
+            </div>
+            <div class="col-12">
+                <label for="">Reason for leave:</label>
+                <textarea name="" id="" class="form-control" name="reason" cols="30" rows="2" ngModel required></textarea>
+            </div>
+            <div class="col">
+                <button class="form-control btn" (click)="applyLeave(leaveform.value)">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

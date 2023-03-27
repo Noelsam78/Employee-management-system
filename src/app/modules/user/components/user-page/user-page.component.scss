@@ -1,0 +1,100 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 10px;
+    z-index: 1;
+    ul{
+        padding-top: 50px;
+        list-style: none;
+        .logo{
+            display: flex;
+            img{ 
+                
+                width: 40px;
+                transform: translateX(-10px);
+                
+            }
+            span{
+                position: relative;
+                top: 10px;
+                font-weight: bold;
+                font-size: 25px;
+                text-transform: uppercase;
+                margin-left: 10px;
+                font-family: 'Forum', 'cursive';
+            }
+        }
+        li{
+            padding-bottom: 10px;
+            a{
+                position: relative;
+                font-size: 14px;
+                width: 300px;
+                display: table;
+                cursor: pointer;
+                text-decoration: none;
+                i{
+                    position: relative;
+                    top: 12px;
+                    width: 70px;
+                    height: 40px;
+                    font-size: 20px;
+                    padding-right: 20px;
+                    text-align: center;
+                }
+                .nav-item{
+                    position: relative;
+                    top: 12px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-left: 10px;
+                    
+                }
+                i{
+                    color: #008080;
+                   
+                }   
+                i:hover{
+                    transform: translateY(-7px);
+                }
+            }
+            .logout{
+                position: absolute;
+                bottom: 40px;
+            }
+        }
+       
+    }
+}
+.sidebar:hover{
+    width: 200px;
+    transition: all 0.5s ease;
+
+}
+
+@media (max-width:767px){
+    .navbar{
+        position: sticky;
+        top: 0;
+         background-color: #ffffff;
+    }
+    }
+   
+@media (min-width:768px){
+    .navbar{
+        padding: 0;
+        height: 0;
+        margin: 0;
+        position: s;
+        top: 0;
+    }
+    
+   
+}

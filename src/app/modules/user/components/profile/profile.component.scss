@@ -1,0 +1,138 @@
+.container-fluid{
+    width: calc(100% - 80px);
+    margin-left: 80px;
+    z-index: 4;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: 19.5px 50px;
+    background-color: #b4d4d4;
+    --bs-gutter-x :0;
+    .employee-info{
+        width: 100%;
+        padding: 0;
+        padding: 100px 0;
+        margin: 0;
+        height: 100%;
+        background: url("/assets/images/profile-background2.jpg");
+        background-size: cover;
+     
+        .emp-info-actions{
+            display: grid;
+            place-items: center;
+        }
+        .employee-card{   
+            border: 3px outset #6969a3;
+            padding: 25px;
+            border-radius: 30px;
+            max-width: 300px;
+            // box-shadow: 5px 5px 10px;
+                .profile-image{
+                        display: grid;
+                        place-items: center;
+                         
+                        img{
+                            width: 150px;
+                            border-radius: 75px;
+                            border: 5px outset rgb(81, 124, 165);
+                        }
+                    }
+                  
+                    i{
+                        color: #4a67c0;
+                        padding-right: 5px;
+                    }
+                    p{
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row;
+                       justify-content: center;
+                       font-size: 18px;
+                       font-weight: 800;
+                        .bi-linkedin{
+                            color: #0A66C2;
+                            padding-left: 10px;
+                        }
+                        .bi-github{
+                            color: #000;
+                            padding-left: 10px;
+                        }
+                    }
+                    .actions{
+                        display: flex;
+                        align-items: center;
+                        justify-content:center;
+                        padding: 20px 0;   
+                    }
+        }
+        
+    }
+    .personal-data{
+        padding-top: 20px;
+       label{
+        font-size: 16px;
+       }
+       p{
+           font-size: 20px;
+           font-weight: 600;
+        }
+    }
+    
+    form{
+        margin-right: 50px;
+        h3{
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: underline; 
+        }
+        .form-control{
+            border: 0;
+            background: rgba($color: #000, $alpha: 0.1);
+        }
+        .form-check-input{
+            border: 2px solid rgb(88, 88, 88);
+           
+        }
+        .btn{
+            color: #fff;
+            background-color: #262626;
+            transition: all 0.5s ease;
+        }
+        .btn:hover{
+            background-color: #23c483;
+            transform: translateY(-7px);
+        }
+        .profile-image{
+            visibility: hidden;
+        }
+
+    }
+    .dob{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+@media (max-width:767px){
+    .container-fluid{
+        padding: 0;
+        width: 100%;
+        margin-left: 0;
+        .employee-info{
+            border-radius: 0;
+            box-shadow: 0;
+      
+            .personal-data{
+               display: grid;
+               place-items: center;
+            }
+        }
+        form{
+            padding-top: 50px;
+            margin: 0;
+            padding-left: 0;
+        }
+    }
+}
+
